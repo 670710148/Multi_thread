@@ -53,7 +53,7 @@ public class Worker extends Thread {
     /**
      * ทำงานหนึ่งชิ้นให้จบตามลำดับ 5 ขั้นด้านบน
      */
- private void processJob(Job job) throws InterruptedException {
+    private void processJob(Job job) throws InterruptedException {
         // TODO
         statistics.jobStarted();
         boolean finished = false;
@@ -79,8 +79,8 @@ public class Worker extends Thread {
                 try {
                     Thread.sleep(job.resourceMs);         // ถือครอง
                 } finally {
-                    resources.release(job.resource);      // คืนเสมอ
-                    logger.resourceReleased(job);
+                    logger.resourceReleased(job);      // log ก่อน
+                    resources.release(job.resource);   // แล้วค่อยคืน permit
                 }
             }
 

@@ -9,10 +9,17 @@
 
 ## 1. วิธี compile
 
+if not exist class mkdir class
+cd src
+javac -d ..\class *.java
+
 เปิด terminal ที่โฟลเดอร์ `src` แล้วรัน
 
 ```
-javac *.java
+cd src
+javac -d ../class *.java
+
+
 ```
 
 ต้องใช้ JDK 17 ขึ้นไป (ใช้เฉพาะ library มาตรฐานของ Java)
@@ -21,6 +28,9 @@ javac *.java
 
 ```
 java Main <workload.csv> <fcfs|priority> <workers> <printerPermits> <databasePermits>
+
+
+java Main ../workloads/jobs_standard.csv priority 3 1 2
 ```
 
 | อาร์กิวเมนต์ | ความหมาย |
