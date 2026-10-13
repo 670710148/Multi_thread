@@ -1,0 +1,58 @@
+[0.016s][warning][cds] The shared archive file was created by a different version or build of HotSpot
+[      38 ms] [main      ] SYSTEM_START       workload=../workloads/jobs_printer.csv policy=priority workers=3 printer=2 database=2
+[      43 ms] [main      ] SYSTEM             ?????????? 6 ????
+[      52 ms] [generator ] JOB_ARRIVED        job=P01 priority=2 work=250ms resource=PRINTER(1200ms)
+[      58 ms] [worker-2  ] JOB_STARTED        job=P01 priority=2
+[     101 ms] [generator ] JOB_ARRIVED        job=P02 priority=1 work=300ms resource=PRINTER(1200ms)
+[     101 ms] [worker-1  ] JOB_STARTED        job=P02 priority=1
+[     200 ms] [generator ] JOB_ARRIVED        job=P03 priority=3 work=250ms resource=PRINTER(1200ms)
+[     201 ms] [worker-3  ] JOB_STARTED        job=P03 priority=3
+[     301 ms] [generator ] JOB_ARRIVED        job=P04 priority=2 work=300ms resource=PRINTER(1200ms)
+[     316 ms] [worker-2  ] WORK_FINISHED      job=P01
+[     323 ms] [worker-2  ] RESOURCE_WAIT      job=P01 resource=PRINTER
+[     332 ms] [worker-2  ] RESOURCE_ACQUIRED  job=P01 resource=PRINTER waited=8ms
+[     400 ms] [generator ] JOB_ARRIVED        job=P05 priority=1 work=250ms resource=PRINTER(1200ms)
+[     402 ms] [worker-1  ] WORK_FINISHED      job=P02
+[     402 ms] [worker-1  ] RESOURCE_WAIT      job=P02 resource=PRINTER
+[     402 ms] [worker-1  ] RESOURCE_ACQUIRED  job=P02 resource=PRINTER waited=0ms
+[     457 ms] [worker-3  ] WORK_FINISHED      job=P03
+[     457 ms] [worker-3  ] RESOURCE_WAIT      job=P03 resource=PRINTER
+[     500 ms] [generator ] JOB_ARRIVED        job=P06 priority=3 work=300ms resource=PRINTER(1200ms)
+[    1067 ms] [monitor   ] MONITOR            ready=3 running=3 completed=0 printer=0/2 database=2/2
+[    1533 ms] [worker-2  ] RESOURCE_RELEASED  job=P01 resource=PRINTER
+[    1533 ms] [worker-3  ] RESOURCE_ACQUIRED  job=P03 resource=PRINTER waited=1076ms
+[    1533 ms] [worker-2  ] JOB_COMPLETED      job=P01
+[    1534 ms] [worker-2  ] JOB_STARTED        job=P05 priority=1
+[    1607 ms] [worker-1  ] RESOURCE_RELEASED  job=P02 resource=PRINTER
+[    1607 ms] [worker-1  ] JOB_COMPLETED      job=P02
+[    1607 ms] [worker-1  ] JOB_STARTED        job=P04 priority=2
+[    1798 ms] [worker-2  ] WORK_FINISHED      job=P05
+[    1799 ms] [worker-2  ] RESOURCE_WAIT      job=P05 resource=PRINTER
+[    1799 ms] [worker-2  ] RESOURCE_ACQUIRED  job=P05 resource=PRINTER waited=0ms
+[    1908 ms] [worker-1  ] WORK_FINISHED      job=P04
+[    1909 ms] [worker-1  ] RESOURCE_WAIT      job=P04 resource=PRINTER
+[    2068 ms] [monitor   ] MONITOR            ready=1 running=3 completed=2 printer=0/2 database=2/2
+[    2740 ms] [worker-3  ] RESOURCE_RELEASED  job=P03 resource=PRINTER
+[    2740 ms] [worker-3  ] JOB_COMPLETED      job=P03
+[    2740 ms] [worker-3  ] JOB_STARTED        job=P06 priority=3
+[    2740 ms] [worker-1  ] RESOURCE_ACQUIRED  job=P04 resource=PRINTER waited=832ms
+[    2999 ms] [worker-2  ] RESOURCE_RELEASED  job=P05 resource=PRINTER
+[    3000 ms] [worker-2  ] JOB_COMPLETED      job=P05
+[    3049 ms] [worker-3  ] WORK_FINISHED      job=P06
+[    3049 ms] [worker-3  ] RESOURCE_WAIT      job=P06 resource=PRINTER
+[    3049 ms] [worker-3  ] RESOURCE_ACQUIRED  job=P06 resource=PRINTER waited=0ms
+[    3088 ms] [monitor   ] MONITOR            ready=0 running=2 completed=4 printer=0/2 database=2/2
+[    3943 ms] [worker-1  ] RESOURCE_RELEASED  job=P04 resource=PRINTER
+[    3944 ms] [worker-1  ] JOB_COMPLETED      job=P04
+[    4093 ms] [monitor   ] MONITOR            ready=0 running=1 completed=5 printer=1/2 database=2/2
+[    4252 ms] [worker-3  ] RESOURCE_RELEASED  job=P06 resource=PRINTER
+[    4252 ms] [worker-3  ] JOB_COMPLETED      job=P06
+========== SUMMARY ==========
+completed             : 6/6
+makespan              : 4253 ms
+avg Waiting Time      : 781 ms
+avg Turnaround Time   : 2587 ms
+avg Resource Wait     : 319 ms (?????????????? resource 6 ???)
+Throughput            : 1.41 jobs/sec
+equation max diff     : 17 ms
+[    4262 ms] [main      ] SYSTEM_STOP        completed=6/6
